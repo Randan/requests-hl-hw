@@ -22,11 +22,11 @@ function asyncReq(q, url) {
             .then((resp) => resp.json()))
         )
         .then(console.log)
+        .then(
+            t++,
+            t < q && asyncReq(q, url)
+        )
         .catch(console.error);
-
-    t++;
-    if (t === q) return false;
-    asyncReq(q, url);
 }
 
 asyncReq();
