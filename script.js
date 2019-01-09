@@ -5,9 +5,10 @@ const randomInteger
     = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
 const randomArray
-    = () => {
+    = (n) => {
         idArr = [];
-        for (i = 0; i < 5; i++) {
+        if (!n) n = 5;
+        for (i = 0; i < n; i++) {
             idArr.push(randomInteger(1, 100));
         }
         return idArr;
